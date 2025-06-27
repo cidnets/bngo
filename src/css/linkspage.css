@@ -64,7 +64,7 @@
 	position: relative;
 	height: var(--link-button-hw);
 	padding: 0.25rem;
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	font-weight: 600;
 	border: 2px solid black;
 	border-radius: 5px;
