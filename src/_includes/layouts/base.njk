@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	{% include "basehead.njk" %}
+  </head>
+  
+<body>
+   {% include "navbar.njk" %}
+  <main>
+    {{ content | safe }}    
+  </main>
+    
+  <footer id='footer' class="footer">
+	{% include "footer.njk" %}    
+  </footer>
+   
+  </body>
+</html>

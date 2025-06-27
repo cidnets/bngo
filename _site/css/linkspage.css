@@ -1,0 +1,142 @@
+:root {
+	--font-family: "Walter Turncoat";
+	
+	--section-dividers: url("/assets/section-dividers.png");
+  
+	/* TITLE */
+    --icon-size: 7rem;
+	--title-size: 2rem;
+	--subtitle-size: 1.2rem;
+	
+	/* BUTTONS */
+	--link-button-hw: 4rem;
+	--link-button-max-width: 400px;
+}
+
+.wrapper {
+	margin-top: 0;
+}
+.navbar-container {
+	margin-top: 40px;
+}
+.navbar a.logo {
+	max-width: var(--link-button-max-width);
+}
+@media screen and (max-width: 576px) {
+	.navbar-container {
+		padding: 1rem 1rem 0;
+	}
+}
+
+#links-page section ul li:has(a[href=""]) {
+        display: none;
+        margin: 0;
+}
+
+#links-page {
+	text-align: center;
+}
+#links-page section {
+	width: 100%;
+	max-width: var(--link-button-max-width);
+	margin: 0 auto;
+}
+#links-page section:not(:last-of-type)::after {
+	display: block;
+	height: 22px;
+	width: 60px;
+	margin: 2rem auto;
+	content: "";
+	background-image: var(--section-dividers);
+}
+#links-page section:last-of-type {
+	margin-bottom: 2rem;
+}
+#links-page section h1,
+#links-page section h2,
+#links-page section h3,
+#links-page section h4,
+#links-page section h5 {
+	margin-bottom: 1.75rem;
+}
+#links-page section a {
+	display: block;
+	position: relative;
+	height: var(--link-button-hw);
+	padding: 0.25rem;
+	font-size: 1.5rem;
+	font-weight: 600;
+	border: 2px solid black;
+	border-radius: 5px;
+	box-shadow: 6px 6px black;
+}
+#links-page section a:hover {
+	background-color: var(--primary);
+	transform: translate(4px, 4px);
+	box-shadow: 2px 2px black;
+}
+#links-page section h1,
+#links-page section h2
+ {
+	font-size: 1.5rem;
+}
+
+#links-page section h3,
+#links-page section h4,
+#links-page section h5 {
+	font-size: 1.2rem;
+}
+
+/* SECTION STYLING */
+
+/* TITLE */
+#links-page section#title h1 {
+	font-size: 3rem;
+}
+/* ALL LINK SECTIONS */
+#links-page section ul {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	grid-gap: 1rem;
+}
+#links-page section ul li {
+	max-width: var(--link-button-max-width);
+}
+#links-page section ul li a:not(:has(a[href=""])) {
+	display: grid;
+	place-items: center;
+}
+/* CONTACT & SOCIALS */
+#links-page section#contact ul,
+#links-page section#socials ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+#links-page section#contact ul li:not(:has(a[href=""])),
+#links-page section#socials ul li:not(:has(a[href=""])) {
+	display: inline-block;
+	width: var(--link-button-hw);
+}
+#links-page section#contact ul li a:not([href=""]),
+#links-page section#socials ul li a:not([href=""]) {
+	aspect-ratio: 1/1;
+}
+
+/* LINKS */
+#links-page section#links ul {
+	flex-direction: column;
+}
+#links-page section#links ul li {
+	width: 100%;
+	height: var(--link-button-hw);
+	margin: 0 auto;
+}
+#links-page section#links ul li a i {
+	position: absolute;
+	left: 1rem; /* Positions it from the left edge */
+	top: 50%; /* Vertically centers it */
+	transform: translateY(-50%);
+}
+

@@ -1,0 +1,13 @@
+:root {
+  
+/* BUTTONS */
+  --tiny-heart-peach: url('/assets/tiny-heart-peach.png');
+  --tiny-heart-pink: url('/assets/tiny-heart-pink.png');
+  
+/* Random Typography Things */
+  --color-text-outline: #fff;
+  --text-outline: -1px -1px 0 var(--color-text-outline),  
+    1px -1px 0 var(--color-text-outline),
+    -1px 1px 0 var(--color-text-outline),
+     1px 1px 0 var(--color-text-outline);
+}

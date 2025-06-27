@@ -1,0 +1,61 @@
+
+h1 {
+	color: var(--title-color);
+}
+h1::before,
+h1::after {
+	content: none;
+}
+
+/* LINK STYLES */
+a,
+button {
+  cursor: pointer;
+}
+a:hover {
+  background: var(--color-primary);
+}
+a, 
+li a,
+p {
+	font-size: 18px;
+}
+
+
+.material-symbols-sharp {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.gamja-flower-regular {
+  font-family: "Gamja Flower", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dynapuff {
+  font-family: "DynaPuff", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+.coiny-regular {
+  font-family: "Coiny", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.wendy-one-regular {
+  font-family: "Wendy One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.titan-one-regular {
+  font-family: "Titan One", serif;
+  font-weight: 400;
+  font-style: normal;
+}

@@ -1,0 +1,93 @@
+:root {
+  --page-content-bg: #fff;
+  --page-content-bg-img: url("https://cdn.glitch.global/8843aa11-b308-4af2-9f53-562017cd4e55/white-dot-border.png?v=1739802826288");
+  --page-content-bg-size: 15px;
+  --page-border: url("https://cdn.glitch.global/8843aa11-b308-4af2-9f53-562017cd4e55/Border-l-blue.png?v=1739802829806") 33% round;
+  --page-divider: url("https://cdn.glitch.global/f96efe69-da44-45a8-8157-225d61dc1ab4/Section-dividers.png?v=1739552514192");
+  --page-divider-color: #674665;
+}
+
+main {
+  padding: 0 1rem;
+}
+#page,
+.post-headers {
+  max-width: 900px;
+}
+#page a {
+  border-bottom: 2px solid var(--color-primary);
+}
+.post-headers {
+  margin: 20vh auto 0;
+  padding: 1rem 1rem;
+  border: 7px solid transparent;
+  border-image: var(--button-border-img-hover);
+  background-color: #fff;
+  text-align: center;
+  color: var(--color-text-main);
+  h1, 
+  h3 {
+    max-width: 70vw;
+    margin: 1rem auto;
+  }
+}
+
+.page-content {
+  padding: 1.5rem 1rem;
+  text-align: left;
+  background: var(--page-content-bg);
+  background-image: var(--page-content-bg-img);
+  background-size: var(--page-content-bg-size);
+  color: var(--color-text-main);
+  border: 7px solid transparent;
+  border-image: var(--page-border);
+}
+
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4,
+.page-content h5 {
+  margin: 2rem 0 1rem;
+  text-align: center;
+  }
+
+.page-content h1::after,
+.page-content h2::after,
+.page-content h3::after,
+.page-content h4::after,
+.page-content h5::after {
+  display: block;
+  margin: 1rem auto 0;
+  font-size: 1.1rem;
+  font-family: var(--font-family);
+  color: var(--page-divider-color);
+  content: var(--page-divider);
+}
+
+.back-to-top {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 1rem;
+  z-index: 10;
+  button {
+    display: none;
+    padding: 0.5rem;
+    color: var(--color-text-main);
+    font: var(--font-family);
+    text-align: center;
+    line-height: 0.75rem;
+    background: #BDE7FF;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 7px solid transparent;
+    border-image: url("https://cdn.glitch.global/f96efe69-da44-45a8-8157-225d61dc1ab4/Border-blue.png?v=1739560183889") 33% round;
+    aspect-ratio: 1 / 1;
+    opacity: 0.6;
+  }
+  button:hover {
+    filter: hue-rotate(270deg) brightness(105%);
+    opacity: 1;
+  }
+}
