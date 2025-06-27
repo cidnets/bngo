@@ -28,7 +28,8 @@
 }
 .footer-content .footer-logo {
 	display: block;
-	margin: 0 0 1.5rem;
+	width: fit-content;
+	margin: 0 auto 1.5rem;
 	text-align: center;
 }
 .footer-content .footer-logo img {
