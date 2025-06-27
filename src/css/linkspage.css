@@ -63,6 +63,7 @@
 	display: block;
 	position: relative;
 	height: var(--link-button-hw);
+	margin: 0 6px 6px 0;
 	padding: 0.25rem;
 	font-size: 1.25rem;
 	font-weight: 600;
