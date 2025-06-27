@@ -9,6 +9,13 @@
 	margin-top: 60px;
 	padding: 0;
 }
+#footer h1,
+#footer h2,
+#footer h3,
+#footer h4,
+#footer h5 {
+	font-family: 'Walter Turncoat';
+}
 .footer-content-container {
 	padding: 40px 0 80px;
 }
@@ -21,7 +28,9 @@
 	display: inline-block;
 	padding: 0.5rem 1rem;
 }
-
+.footer-content .credit a {
+	border-bottom: 2px solid var(--primary);
+}
 .footer-content .links a:hover,
 .footer-content .credit a:hover {
 	background-color: var(--primary);
