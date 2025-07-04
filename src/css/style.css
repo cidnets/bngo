@@ -58,7 +58,6 @@ body {
 	position: fixed;
 	height: 100%;
 	width: 100%;
-	padding: 5rem 1rem var(--navbar-height);
 	display: flex;
 	flex-direction: column;
 	align-content: center;
