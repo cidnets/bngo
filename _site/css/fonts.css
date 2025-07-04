@@ -8,30 +8,8 @@
 h1, h2, h3, h4, h5 {
 	font-family: var(--header);
 }
-h1 {
-	font-size: 2rem;
-}
-h5 {
-	font-size: 1.1rem;
-}
-h1:first-of-type {
-	margin-top: 0;
-}
-.title {
-	text-align: center;
-	margin: 0 auto;
-	font-size: 2.5rem;
-}
-a {
-	color: var(--text);
-	text-decoration: none;
-}
-a:visited {
-	color: var(--text);
-}
-ul, ol {
-	list-style-type: none;
-	padding: 0;
+h1, h2, h3, h4, h5, button, input, label, #clock {
+	line-height: 1.1rem;
 }
 
 .material-symbols-outlined {

@@ -1,0 +1,73 @@
+---
+templateClass: tmpl-links
+pageStyles: /css/linkspage.css
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% include "basehead.njk" %}
+	</head>
+  
+	<body>
+		<main>
+			<base target="_blank">
+
+			<div class="wrapper home">
+				<div id="links-page" class="content">
+    
+					<section class="links-hero">
+						<a {% if page.url == '/' %} href="#" {% else %} href="/" {% endif %} class="logo">
+							<img src="/assets/bngo-logo.png"/>
+							<img src="/assets/typing-gif.png"/>
+						</a>
+					</section>
+	
+					<section id="title" class="links-links">
+						{% for post in collections.linkstitle %}
+						{% if post.data.thumb %}
+						<div class="icon">
+							<img src="{{ post.data.thumb }}">
+						</div>
+						{% endif %}
+						<h1>
+							{{ post.data.title }}
+						</h1>
+						<h2>
+							{{ post.data.description }}
+						</h2>
+						{% endfor %}
+					</section>
+    
+					<section id="contact" class="links-links">
+						{% for post in collections.linkscontact%}
+						{{ post.templateContent | safe }}
+						{% endfor %}
+					</section>
+    
+					<section id="links" class="links-links">
+						{% for post in collections.linkslinks %}
+						{{ post.templateContent | safe }}
+						{% endfor %}
+					</section>
+    
+					<section id="socials" class="links-links">
+						{% for post in collections.linkssocials %}
+						{{ post.templateContent | safe }}
+						{% endfor %}
+					</section>
+    
+					{{ content | safe }}
+    
+				</div>
+			</div>
+		</main>
+ 
+		<footer id='footer' class="footer">
+			{% include "footer.njk" %}
+		</footer>
+   
+	</body>
+</html>
+
+

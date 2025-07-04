@@ -1,11 +1,11 @@
 @import "reset.css";
-@import "colors.css";
-@import "fonts.css";
-@import "footer.css";
-@import "headers.css";
-@import "navbar.css";
 @import "page.css";
 @import "post.css";
+@import "colors.css";
+@import "fonts.css";
+@import "navbar.css";
+@import "footer.css";
+@import "windows.css";
 
 
 :root {
@@ -35,9 +35,64 @@ html, body {
 	padding: 0;
 }
 body {
-	background-size: 64px;
+	background-color: var(--site-bg);
 	font-family: var(--font-family);
-	color: var(--color-text-main);
+	color: var(--text);
+}
+
+#desktop {
+	position: relative;
+    height: calc(100vh - var(--navbar-height)); /* Full height minus taskbar */
+    padding: 1rem;
+}
+
+.app-icon {
+    /* Styles for your icons in the taskbar */
+    margin: 0 5px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+
+.site-bg {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	padding: 5rem 1rem var(--navbar-height);
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	text-align: center;	
+}
+.site-bg-img-container {
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+.site-bg img:last-of-type {
+	padding-left: 2rem;
+}
+.site-credit {
+	margin-top: 60px;
+	margin-bottom: var(--navbar-height);
+	font-size: 0.9rem;
+}
+.site-credit * {
+	margin-top: 0;
+}
+.site-credit .credit-logo > * {
+	margin-bottom: 1rem;
+}
+.site-credit .credit-logo img {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
 }
 
 .wrapper {
@@ -54,5 +109,7 @@ body {
 }
 
 @media screen and (max-width: 576px) {
- 
+	.site-credit {
+		margin-top: 1rem;
+	}
 }

@@ -1,0 +1,111 @@
+.window {
+    position: absolute;
+	min-width: 250px;
+    min-height: 150px;
+    background-color: var(--fill);
+    display: flex;
+    flex-direction: column;
+	border: var(--border);
+	border-radius: 0.5rem;
+    box-shadow: 6px 6px var(--text);
+	overflow: hidden;
+}
+
+.window-header {
+    background-color: var(--primary);
+    color: var(--text);
+	border-bottom: var(--border);
+    padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+    font-weight: bold;
+    cursor: grab;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.window-controls button {
+    background-color: var(--primary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    border: var(--border);
+	border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+	aspect-ratio: 1/1;
+}
+.window-controls button:hover {
+	background-color: var(--primary-2);
+}
+
+.window-content {
+    padding: 10px;
+    flex-grow: 1;
+    background: var(--fill);
+    overflow: auto;
+}
+
+.window.active .window-header,
+.window.active .window-controls button,
+.navbar-button.active {
+  background-color: var(--primary-2);
+}
+.window.active .window-controls button:hover {
+	background-color: var(--primary);
+}
+.window.active .window-content {
+	filter: hue-rotate(45deg);
+}
+
+.window.active {
+  box-shadow: 6px 6px var(--text);
+}
+
+/* NAVBAR TEMP BUTTONS */
+.navbar-button {
+	display: block;
+	width: fit-content;
+	margin-left: 1rem;
+	padding: 0.5rem 1rem; 
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+	background-color: var(--primary);
+	border: var(--border);
+	border-radius: 0.5rem;
+	color: var(--text);
+}
+
+.navbar-button:active,
+.navbar-button:hover {
+    background-color: var(--primary-2);
+}
+
+/* DESKTOP ICONS */
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 0.5rem;
+  background-color: rgba(var(--white-rgb), 0.6);
+  color: var(--text);
+  text-decoration: none;
+}
+.desktop-icon:hover {
+  background-color: var(--primary-2);
+}
+.desktop-icon .icon-visual {
+  font-size: 2.5rem; /* Make the emoji bigger */
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 576px) {
+
+
+}

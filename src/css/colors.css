@@ -1,56 +1,19 @@
 :root {
-	--background: url('/assets/Heart-dot-bg.png');
-	--color-bg: #fdfefe;
-	--color-text-main: black;
-	--color-text-header: #FFBE6B;
-	--primary: #bde7ff;
+	--blue: #98DDFF;
+	--dark-blue: #05273d;
+	--lavender: #d5caff;
+	--teal: #348087;
+	--white: #f3faff;
+	--white-rgb: 243, 250, 255;
+	--black: #1d1826;
+	--off-white: #e6faff;
 	
-	--border: 2px solid black;
-	--border-radius: 5px;
-	--box-shadow: 6px 6px black;
+	--site-bg: var(--white);
+	--text: var(--dark-blue);
+	--primary: var(--blue);
+	--primary-2: var(--lavender);
+	--background: var(--white);
+	--fill: var(--off-white);
 	
-	--border-primary: 3px dashed var(--primary);
-	
-	--van-dyke: #423430;
-	--cambridge-blue: #789896;
-	--mint: #97FF9A;
-	--blue: #bde7ff;
-	--seasalt: #FAF9F9;
-	--light-gray: #fdfefe;
-	--apricot: #FFD6BA;
-	
-	--section-divider: url("/assets/Star-Dividers.png");
-  
-/* Title */
-	--title-color: #FFA46C;
-	--title-outline: #240046;
-	--title-subtitle: #FFBE6B;
-  
-/* BUTTONS */
-    
-/* Frilly Border Bases */
-	--border-white: url('/assets/Border-base.png') 33% round;
-	--border-blue: url('/assets/Border-blue.png') 33% round;
-	--border-green: url('/assets/Border-green.png') 33% round;
-	--border-l-blue: url('/assets/Border-l-blue.png') 33% round;
-	--border-peach: url('/assets/Border-peach.png') 33% round;
-	--border-pink: url('/assets/Border-pink.png') 33% round;
-	--border-purple: url('/assets/Border-purple.png') 33% round;
-	--border-yellow: url('/assets/Border-yellow.png') 33% round;
-	
-	--white: #fff;
-	--blue: #BDE7FF;
-	--green: #BFEBAC;
-	--l-blue: #F4FCFF;
-	--peach: #FFD5BD;
-	--pink: #FFD0DE;
-	--purple: #F1CBFF;
-	--yellow: #FDFFBD;
-	--white-dot-bg: url('/assets/white-dot-border.png');
-	--purple-2: #d39ee7;
-	
-	--tiny-heart-peach: url('/assets/tiny-heart-peach.png');
-	--tiny-heart-pink: url('/assets/tiny-heart-pink.png');
-	--tiny-heart-size: 15px;
-
-  
+	--border: 2px solid var(--text);
+}

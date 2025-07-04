@@ -4,7 +4,11 @@
 	<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">     </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/base/jquery-ui.css">
+
+
 <script src="https://kit.fontawesome.com/ca052c1b0a.js" crossorigin="anonymous"></script>
 
 <title>8 Cool Digital Nomad Tools You Should Be Using - BNgo</title>
@@ -15,20 +19,36 @@
   </head>
   
 <body>
-   <div class="navbar-container">
-
-<div class="navbar" id="navbar">
-	<a  href="/"  class="logo">
-		<img src="/assets/bngo-logo.gif"/>
-		<img src="/assets/typing-small.gif"/>
-	</a>
-  
+	<div class="site-bg">
+	<div class="site-bg-img-container">
+		<img src="/assets/bngo-logo.png"/>
+		<img src="/assets/typing-gif.png"/>
+	</div>
+	
+	<div class="site-credit">
+		<div class="credit">
+			<p>
+				&copy; <span id="copyright-year"></span> Brendon Ngo. All Rights Reserved.
+			</p>
+			<p class="cidnets-credit">
+				Coded &amp Designed by <a href="https://sydgarcia.pages.dev/links/">Syd Garcia @Cidnets</a>
+			</p>
+		</div>
+	</div>
 </div>
-</div>
-  
- <button onclick="backToTop()" id="back-to-top-bttn" title="Go to top"><i class="fa-solid fa-caret-up"></i><p>Top</p></button>
-
-  <main>
+  <main id="desktop">
+	
+    <a href="#" class="app-launcher desktop-icon" data-title="My Portfolio" data-url="/portfolio/" data-id="portfolio">
+		<div class="icon-visual">💼</div>
+		<span>My Portfolio</span>
+    </a>
+	
+    <a href="#" class="app-launcher desktop-icon" data-title="Photo Gallery" data-url="/gallery/" data-id="gallery">
+		<div class="icon-visual">🖼️</div>
+		<span>Photo Gallery</span>
+    </a>
+	
+	
     
 <div class="wrapper">
 	<div class="content">
@@ -65,28 +85,29 @@
 	</div>
 </div>    
   </main>
-    
-  <footer id='footer' class="footer">
-	<div class="footer-content-container">
-<div class="footer-content">
-	<div class="footer-divider"></div>
-	<div>
-		<a  href="/"  class="footer-logo">
-			<img src="/assets/bngo-glasses.svg"/>
-			<h2>B. Ngo</h2>
-		</a>
+    <div id="navbar" class="navbar">
+	<input type="checkbox" id="navbar-toggle" class="navbar-toggle">
+	<label for="navbar-toggle" class="hamburger">
+		Start
+	</label>
+  
+	<div class="nav-links">
+	
+		<a href="#" class="app-launcher" data-title="Link 1" data-url="/link/" data-id="link-1">Link 1</a>
+	
+		<a href="#" class="app-launcher" data-title="Link 2" data-url="/link2/" data-id="link-2">Link 2</a>
+	
+		<a href="#" class="app-launcher" data-title="Link 3" data-url="/link3/" data-id="link-3">Link 3</a>
+	
+		<a href="#" class="app-launcher" data-title="About This Site" data-url="/about/" data-id="about">About This Site</a>
+	
+		<a href="#" class="app-launcher" data-title="Contact Me" data-url="/contact/" data-id="contact">Contact Me</a>
+	
 	</div>
 
-    <div class="credit">
-		<p>
-			&copy; <span id="copyright-year"></span> Brendon Ngo. All Rights Reserved.
-		</p>
-		<p class="cidnets-credit">
-			Coded &amp Designed by <a href="https://sydgarcia.pages.dev/links/">Syd Garcia @Cidnets</a>
-		</p>
-    </div>
+	<div id="clock">8:10:45</div>
 </div>
-</div>    
+  <footer id='footer' class="footer">  
   </footer>
    
   </body>

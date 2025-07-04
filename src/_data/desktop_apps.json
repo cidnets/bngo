@@ -1,0 +1,14 @@
+[
+	{
+		"id": "portfolio",
+		"title": "My Portfolio",
+		"icon": "💼",
+		"url": "/portfolio/"
+	},
+	{
+		"id": "gallery",
+		"title": "Photo Gallery",
+		"icon": "🖼️",
+		"url": "/gallery/"
+	}
+]

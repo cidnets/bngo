@@ -1,12 +1,14 @@
-<div class="navbar-container">
+<div id="navbar" class="navbar">
+	<input type="checkbox" id="navbar-toggle" class="navbar-toggle">
+	<label for="navbar-toggle" class="hamburger">
+		Start
+	</label>
+  
+	<div class="nav-links">
+	{% for link in navbar_links %}
+		<a href="#" class="app-launcher" data-title="{{ link.title }}" data-url="{{ link.url }}" data-id="{{ link.id }}">{{ link.title }}</a>
+	{% endfor %}
+	</div>
 
-<div class="navbar" id="navbar">
-	<a {% if page.url == '/' %} href="#" {% else %} href="/" {% endif %} class="logo">
-		<img src="/assets/bngo-logo.gif"/>
-		<img src="/assets/typing-small.gif"/>
-	</a>
-  
+	<div id="clock">8:10:45</div>
 </div>
-</div>
-  
- <button onclick="backToTop()" id="back-to-top-bttn" title="Go to top"><i class="fa-solid fa-caret-up"></i><p>Top</p></button>

@@ -1,0 +1,27 @@
+[
+	{
+		"id": "link-1",
+		"title": "Link 1",
+		"url": "/link/"
+	},
+	{
+		"id": "link-2",
+		"title": "Link 2",
+		"url": "/link2/"
+	},
+	{
+		"id": "link-3",
+		"title": "Link 3",
+		"url": "/link3/"
+	},
+	{
+		"id": "about",
+		"title": "About This Site",
+		"url": "/about/"
+	},
+	{
+		"id": "contact",
+		"title": "Contact Me",
+		"url": "/contact/"
+	}
+]

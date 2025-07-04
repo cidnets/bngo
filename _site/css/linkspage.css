@@ -1,3 +1,9 @@
+@import "links/colors.css";
+@import "links/fonts.css";
+@import "links/footer.css";
+@import "links/navbar.css";
+
+
 :root {
 	--font-family: "Space Grotesk";
 	--header: 'Jersey 20';
@@ -17,14 +23,25 @@
 .wrapper {
 	margin-top: 0;
 }
-.navbar-container {
+
+#links-page section.links-hero {
 	margin-top: 40px;
 }
-.navbar a.logo {
+#links-page section.links-hero a {
+	display: block;
+	height: auto;
 	max-width: var(--link-button-max-width);
+	border: none;
+	box-shadow: none;
 }
+#links-page section.links-hero a:hover {
+	background-color: transparent;
+	transform: none;
+	box-shadow: none;
+}
+
 @media screen and (max-width: 576px) {
-	.navbar-container {
+	#links-page section.links-hero {
 		padding: 1rem 1rem 0;
 	}
 }
@@ -69,14 +86,14 @@
 	padding: 0.25rem;
 	font-size: 1.25rem;
 	font-weight: 600;
-	border: 2px solid black;
+	border: 2px solid var(--text);
 	border-radius: 5px;
-	box-shadow: 6px 6px black;
+	box-shadow: 6px 6px var(--text);
 }
 #links-page section a:hover {
 	background-color: var(--primary);
 	transform: translate(4px, 4px);
-	box-shadow: 2px 2px black;
+	box-shadow: 2px 2px var(--text);
 }
 
 
