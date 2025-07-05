@@ -5,20 +5,28 @@
   </head>
   
 <body>
-  <main id="desktop">
 	{% include "sitebg.njk" %}
-	{% for app in desktop_apps %}
-    <a href="#" class="app-launcher desktop-icon" data-title="{{ app.title }}" data-url="{{ app.url }}" data-id="{{ app.id }}">
-		<div class="icon-visual">{{ app.icon }}</div>
-		<span>{{ app.title }}</span>
-    </a>
-	{% endfor %}
+  <main id="desktop">
+
+	<div class="app-drawer">
+		{% for app in desktop_apps %}
+		<a href="#" class="app-launcher desktop-icon" data-title="{{ app.title }}" data-url="{{ app.url }}" data-id="{{ app.id }}">
+			<div class="icon-visual">{{ app.icon }}</div>
+			<span>{{ app.title }}</span>
+		</a>
+		{% endfor %}
+	</div>
 	
     {{ content | safe }}    
   </main>
     {% include "navbar.njk" %}
   <footer id='footer' class="footer">  
   </footer>
+   
+	<div id="context-menu">
+		<div class="context-menu-item" id="context-menu-close">Close</div>
+		<div class="context-menu-item" id="context-menu-close-all">Close All Windows</div>
+	</div>
    
   </body>
 </html>

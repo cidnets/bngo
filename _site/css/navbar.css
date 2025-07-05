@@ -14,7 +14,11 @@
 	align-items: center;
 	border-top: var(--border);
 	font-family: "DotGothic16";
-	font-size: 1.1rem;
+	font-size: 1rem;
+	z-index: 9999;
+}
+.mobile-navbar {
+	display: none;
 }
 
 .logo a {
@@ -33,8 +37,10 @@
 	cursor: pointer;
 	border: var(--border);
 	border-radius: 0.5rem;
-	padding: 0.5rem 1rem;
 	flex-shrink: 0;
+}
+.hamburger, .date-time, .navbar-button {
+	padding: 0.3rem 0.75rem;
 }
 
 .nav-links {
@@ -57,40 +63,93 @@
 	display: flex;
  }
 
-.nav-links a {
+.nav-links a,
+.nav-links button {
 	padding: 1.5rem 1rem;
 	text-align: center;
 	text-decoration: none;
+	background-color: transparent;
 	color: var(--text);
 }
-.nav-links a:not(:last-of-type) {
+.nav-links button {
+	border: none;
+}
+.nav-links a {
 	border-bottom: 1px solid var(--text);
 }
 .navbar a:hover,
 .navbar label:hover,
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links button:hover {
 	background-color: var(--primary-2);
 }
 
-#clock {
-	display: block;
-	width: fit-content;
+.date-time {
 	margin-left: auto;
-	padding: 0.5rem 1rem;
+	flex-shrink: 0;
+	width: fit-content;
 	border: var(--border);
 	border-radius: 0.5rem;
 	background: var(--fill);
 	overflow: hidden;
-	flex-shrink: 0;
+	cursor: pointer;
+	user-select: none;
+}
+.date-time:hover,
+.date-time:hover #clock {
+	background-color: var(--primary-2);
+}
+#date {
+	display: inline-block;
+}
+#clock {
+	display: inline-block;
+}
+
+/* Calendar */
+#calendar-container {
+	position: absolute;
+	bottom: var(--navbar-height);
+	right: 0;
+	width: 300px;
+	margin: 1rem;
+	padding: 0.75rem;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 5px;
+	background-color: var(--fill);
+	border: var(--border);
+	border-radius: 0.5rem;
+}
+.calendar-hidden {
+	display: none !important;
+}
+.calendar-header {
+	grid-column: 1 / -1; 
+	text-align: center;
+	font-size: 1.1rem;
+	font-weight: bold;
+	padding-bottom: 0.75rem;
+}
+.day-name {
+	text-align: center;
+	font-weight: bold;
+	font-size: 0.9rem;
+}
+.day-cell {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 2rem;
+	text-align: center;
+	border-radius: 50%;
+	font-family: var(--font-family);
+}
+.current-day {
+	background-color: var(--primary-2);
+	font-weight: bold;
 }
 
 @media screen and (max-width: 576px) {
-	
-	.hamburger {
-		margin-right: 1rem;
-	}
-	#clock {
-		margin-left: 1rem;
-	}
 	
 }

@@ -8,7 +8,16 @@
 	{% for link in navbar_links %}
 		<a href="#" class="app-launcher" data-title="{{ link.title }}" data-url="{{ link.url }}" data-id="{{ link.id }}">{{ link.title }}</a>
 	{% endfor %}
+	<button id="close-all-windows">Close All Windows</button>
 	</div>
-
-	<div id="clock">8:10:45</div>
+	
+	<div id="date-time" class="date-time">
+		<div id="date"></div> 
+		<span>|</span>
+		<div id="clock">8:10:45</div>
+	</div>
+	
+	<div id="calendar-container" class="calendar-hidden"></div>
+	
 </div>
+

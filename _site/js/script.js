@@ -1,5 +1,4 @@
 console.log("hello, world!");
-console.log("sup bitch?");
 
 //COPYRIGHT
 const copyrightYearSpan = document.getElementById('copyright-year');
@@ -27,6 +26,17 @@ navLinks.forEach(link => {
 });
 // END NAVBAR
 
+// DATE
+  document.addEventListener('DOMContentLoaded', () => {
+    const dateElement = document.getElementById('date');
+    if (dateElement) {
+      const today = new Date();
+      const options = { month: 'short', day: 'numeric' };
+      dateElement.textContent = today.toLocaleDateString(undefined, options);
+    }
+  });
+// END DATE
+
 // CLOCK
 setInterval(showTime, 1000);
 function showTime() {
@@ -48,14 +58,84 @@ function showTime() {
   min = min < 10 ? "0" + min : min;
  // sec = sec < 10 ? "0" + sec : sec;
 
-  let currentTime = hour + ":" + min + " " + am_pm;
-  // + ":" + sec
+// Get the time zone abbreviation (e.g., PDT, EST)
+  const timeZone = new Intl.DateTimeFormat('en-US', { timeZoneName: 'short' })
+      .formatToParts(time)
+      .find(part => part.type === 'timeZoneName')?.value || '';
+
+  // Append the time zone to your current time string
+  let currentTime = `${hour}:${min} ${am_pm} ${timeZone}`;
 
   document.getElementById("clock").innerHTML = currentTime;
 }
 
 showTime();
 // END CLOCK 
+
+// CALENDAR 
+document.addEventListener('DOMContentLoaded', () => {
+  const dateDisplay = document.getElementById('date-time');
+  const calendarContainer = document.getElementById('calendar-container');
+
+  // Function to generate and display the calendar
+  function generateCalendar(year, month) {
+    // Clear previous calendar
+    calendarContainer.innerHTML = '';
+
+    const today = new Date();
+    const currentMonth = new Date(year, month);
+
+    // --- Create Header ---
+    const header = document.createElement('div');
+    header.className = 'calendar-header';
+    header.textContent = `${currentMonth.toLocaleString('default', { month: 'long' })} ${year}`;
+    calendarContainer.appendChild(header);
+
+    // --- Create Day Names (Sun-Sat) ---
+    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    dayNames.forEach(day => {
+      const dayNameCell = document.createElement('div');
+      dayNameCell.className = 'day-name';
+      dayNameCell.textContent = day;
+      calendarContainer.appendChild(dayNameCell);
+    });
+
+    // --- Create Date Cells ---
+    const firstDayOfMonth = new Date(year, month, 1).getDay(); // 0=Sun, 1=Mon...
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    // Add empty cells for the days before the 1st
+    for (let i = 0; i < firstDayOfMonth; i++) {
+      calendarContainer.appendChild(document.createElement('div'));
+    }
+
+    // Add cells for each day of the month
+    for (let day = 1; day <= daysInMonth; day++) {
+      const dayCell = document.createElement('div');
+      dayCell.className = 'day-cell';
+      dayCell.textContent = day;
+
+      // Highlight the current day
+      if (year === today.getFullYear() && month === today.getMonth() && day === today.getDate()) {
+        dayCell.classList.add('current-day');
+      }
+      calendarContainer.appendChild(dayCell);
+    }
+  }
+
+  // Event listener for the date display click
+  dateDisplay.addEventListener('click', () => {
+    // Toggle the 'hidden' class
+    calendarContainer.classList.toggle('calendar-hidden');
+
+    // If the calendar is now visible, generate its content
+    if (!calendarContainer.classList.contains('calendar-hidden')) {
+      const today = new Date();
+      generateCalendar(today.getFullYear(), today.getMonth());
+    }
+  });
+});
+// END CALENDAR
 
 //BACK TO TOP BUTTON
 // Get the button:
@@ -79,87 +159,3 @@ function backToTop() {
 }
 // END BACK TO TOP BUTTON
 // END UNIVERSAL PAGE FX
-
-// DESKTOP OS
-$(document).ready(function() {
-    let zIndexCounter = 1000;
-
-    function setActiveWindow($window) {
-        $('.window.active').removeClass('active');
-        $('.navbar-button.active').removeClass('active');
-        $window.addClass('active').css('z-index', ++zIndexCounter);
-        const windowId = $window.attr('id');
-        $(`.navbar-button[data-window-id="${windowId}"]`).addClass('active');
-    }
-
-    // UNIFIED LAUNCHER: This now handles clicks from icons AND the navbar menu.
-    $('body').on('click', '.app-launcher', function(e) {
-        e.preventDefault();
-        const app_id = $(this).data('id');
-        const title = $(this).data('title');
-        const url = $(this).data('url');
-        const windowId = 'window-' + app_id;
-
-        // CHECK IF WINDOW ALREADY EXISTS
-        let $existingWindow = $('#' + windowId);
-        if ($existingWindow.length) {
-            setActiveWindow($existingWindow); // If it exists, just bring it to the front
-        } else {
-            createWindow(windowId, title, url); // Otherwise, create it
-        }
-    });
-
-    function createWindow(windowId, title, url) {
-        const windowHtml = `
-            <div class="window" id="${windowId}">
-                <div class="window-header">
-                    <span class="window-title">${title}</span>
-                    <div class="window-controls">
-                        <button class="window-close">×</button>
-                    </div>
-                </div>
-                <div class="window-content"><p>Loading...</p></div>
-            </div>`;
-        const $newWindow = $(windowHtml).appendTo('#desktop');
-
-        const navbarButtonHtml = `<button class="navbar-button" data-window-id="${windowId}">${title}</button>`;
-        $(navbarButtonHtml).insertAfter('#navbar .hamburger');
-
-        $newWindow.find('.window-content').load(url + ' #page-content', function(response, status, xhr) {
-            if (status == "error") {
-                $(this).html("Sorry, an error occurred: " + xhr.status + " " + xhr.statusText);
-            }
-        });
-
-        $newWindow.draggable({
-            handle: ".window-header",
-            containment: "body",
-            start: function() { setActiveWindow($(this)); }
-        }).resizable({
-            minHeight: 150,
-            minWidth: 250,
-            handles: "n, e, s, w, ne, se, sw, nw",
-            start: function() { setActiveWindow($(this)); }
-        });
-
-        $newWindow.on('mousedown', function() { setActiveWindow($(this)); });
-        setActiveWindow($newWindow);
-    }
-
-    // Handle closing the window (this remains the same)
-    $('body').on('click', '.window-close', function() {
-        const $window = $(this).closest('.window');
-        const windowId = $window.attr('id');
-        $(`.navbar-button[data-window-id="${windowId}"]`).remove();
-        $window.remove();
-    });
-
-    // Handle bringing window to front via navbar button (this also remains the same)
-    $('body').on('click', '.navbar-button', function() {
-        const windowId = $(this).data('window-id');
-        const $targetWindow = $('#' + windowId);
-        if ($targetWindow.length) {
-            setActiveWindow($targetWindow);
-        }
-    });
-});

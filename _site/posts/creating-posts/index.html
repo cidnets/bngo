@@ -15,7 +15,9 @@
 <link rel="icon" type="image/x-icon" href="/assets/bngo-glasses.svg">
 <link rel="stylesheet" href="/css/style.css"/>
 	
+	
 <script src="/js/script.js" defer></script>
+<script src="/js/windows.js" defer></script>
   </head>
   
 <body>
@@ -37,17 +39,20 @@
 	</div>
 </div>
   <main id="desktop">
-	
-    <a href="#" class="app-launcher desktop-icon" data-title="My Portfolio" data-url="/portfolio/" data-id="portfolio">
-		<div class="icon-visual">💼</div>
-		<span>My Portfolio</span>
-    </a>
-	
-    <a href="#" class="app-launcher desktop-icon" data-title="Photo Gallery" data-url="/gallery/" data-id="gallery">
-		<div class="icon-visual">🖼️</div>
-		<span>Photo Gallery</span>
-    </a>
-	
+
+	<div class="app-drawer">
+		
+		<a href="#" class="app-launcher desktop-icon" data-title="My Portfolio" data-url="/portfolio/" data-id="portfolio">
+			<div class="icon-visual">💼</div>
+			<span>My Portfolio</span>
+		</a>
+		
+		<a href="#" class="app-launcher desktop-icon" data-title="Photo Gallery" data-url="/gallery/" data-id="gallery">
+			<div class="icon-visual">🖼️</div>
+			<span>Photo Gallery</span>
+		</a>
+		
+	</div>
 	
     
 <div class="wrapper">
@@ -99,12 +104,27 @@ OMG this is my first post!
 	
 		<a href="#" class="app-launcher" data-title="Contact Me" data-url="/contact/" data-id="contact">Contact Me</a>
 	
+	<button id="close-all-windows">Close All Windows</button>
 	</div>
-
-	<div id="clock">8:10:45</div>
+	
+	<div id="date-time" class="date-time">
+		<div id="date"></div> 
+		<span>|</span>
+		<div id="clock">8:10:45</div>
+	</div>
+	
+	<div id="calendar-container" class="calendar-hidden"></div>
+	
 </div>
+
+
   <footer id='footer' class="footer">  
   </footer>
+   
+	<div id="context-menu">
+		<div class="context-menu-item" id="context-menu-close">Close</div>
+		<div class="context-menu-item" id="context-menu-close-all">Close All Windows</div>
+	</div>
    
   </body>
 </html>

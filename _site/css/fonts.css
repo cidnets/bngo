@@ -12,6 +12,10 @@ h1, h2, h3, h4, h5, button, input, label, #clock {
 	line-height: 1.1rem;
 }
 
+button {
+	cursor: pointer;
+}
+
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
